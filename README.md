@@ -930,6 +930,7 @@ para convertir ese valor digital a voltaje real (en voltios).
 - Convierte el valor digital del ADC a un **voltaje real en voltios**.
 
 #### Fórmula:
+
 $$
 \
 \text{voltaje} = \left(\frac{\text{adc\_value} \times 5.0}{1023.0}\right)
