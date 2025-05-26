@@ -933,6 +933,8 @@ para convertir ese valor digital a voltaje real (en voltios).
 
 $$\text{voltaje} = \left(\frac{\text{adc\_value} \times 5.0}{1023.0}\right)$$
 
+---
+
 #### **¿Qué hace esta fórmula?**
 
 El ADC del **PIC18F45K22** es de **10 bits**, lo que significa que puede representar \( 2^{10} = 1024 \) **niveles discretos**, numerados del 0 al 1023.
@@ -948,7 +950,7 @@ $$
 \text{Voltaje} = \frac{\text{adc\_value} \times 5.0}{1023.0}
 \
 $$
-
+---
 ### Ejemplos:
 
 | `adc_value` | Voltaje calculado (aprox) |
