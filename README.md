@@ -715,7 +715,7 @@ PuTTY es una herramienta gratuita para Windows que permite la comunicación seri
 
 4. Se puede ver en el Administrador de dispositivos de Windows
 
-![alt text](/IMAGENES/Com5.png)
+
 
 5. En "Speed" (velocidad), escribe 9600 (porque el código está configurado a 9600 baudios)
 
