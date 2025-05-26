@@ -945,10 +945,9 @@ $$\text{Resolución del ADC} = \frac{5.0\ \text{V}}{1023} \approx 0.00489\ \text
 
 Entonces, para convertir un valor del ADC a voltaje real, se multiplica el valor digital por esa fracción:
 
-$$
-\text{voltaje} = \left( \frac{\text{ad\_c\_value} \times 5.0}{1023.0} \right)
-$$
----
+
+$$Voltaje = \left( \frac{\text{adc\_value} \times 5.0}{1023.0} \right)$$
+
 ### Ejemplos:
 
 | `adc_value` | Voltaje calculado (aprox) |
