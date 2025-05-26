@@ -933,7 +933,6 @@ para convertir ese valor digital a voltaje real (en voltios).
 
 $$\text{voltaje} = \left(\frac{\text{adc\_value} \times 5.0}{1023.0}\right)$$
 
----
 
 #### **¿Qué hace esta fórmula?**
 
@@ -943,12 +942,13 @@ Cada uno de estos niveles representa una fracción del voltaje de referencia (qu
 
 $$\text{Resolución del ADC} = \frac{5.0\ \text{V}}{1023} \approx 0.00489\ \text{V por unidad}\ $$
 
-$$Voltaje = \left( \frac{\text{adc\_value} \times 5.0}{1023.0} \right)$$
-
 Entonces, para convertir un valor del ADC a voltaje real, se multiplica el valor digital por esa fracción:
 
 
-$$Voltaje = \left( \frac{\text{adc\_value} \times 5.0}{1023.0} \right)$$
+$$
+
+\text{voltaje} = \left( \frac{\text{advalue} * 5.0}{1023.0} \right)
+$$
 
 ### Ejemplos:
 
