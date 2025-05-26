@@ -931,11 +931,7 @@ para convertir ese valor digital a voltaje real (en voltios).
 
 #### Fórmula:
 
-$$
-\
-\text{voltaje} = \left(\frac{\text{adc\_value} \times 5.0}{1023.0}\right)
-\
-$$
+$$\text{voltaje} = \left(\frac{\text{adc\_value} \times 5.0}{1023.0}\right)$$
 
 #### **¿Qué hace esta fórmula?**
 
@@ -943,11 +939,7 @@ El ADC del **PIC18F45K22** es de **10 bits**, lo que significa que puede represe
 
 Cada uno de estos niveles representa una fracción del voltaje de referencia (que en este caso es 5.0 V):
 
-$$
-\
-\text{Resolución del ADC} = \frac{5.0\ \text{V}}{1023} \approx 0.00489\ \text{V por unidad}
-\
-$$
+$$\text{Resolución del ADC} = \frac{5.0\ \text{V}}{1023} \approx 0.00489\ \text{V por unidad}\ $$
 
 Entonces, para convertir un valor del ADC a voltaje real, se multiplica el valor digital por esa fracción:
 
