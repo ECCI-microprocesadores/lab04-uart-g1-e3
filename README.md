@@ -1402,6 +1402,10 @@ En la gráfica se observa cómo varía el voltaje leído a través de la comunic
 
 ![alt text](/IMAGENES/CONEXIONES_UART.jpg)
 
+### DIAGRAMA DE FLUJO
+
+![alt text](/IMAGENES/DIAGRAMA_UART.png)
+
 # IMPLEMENTACIÓN
 
 [VIDEO DE IMPLEMENTACIÓN](https://youtu.be/MxzA_0oDXVE)
