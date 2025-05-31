@@ -729,13 +729,17 @@ Una vez abierto PuTTY:
 
 - Deberia comenzar a ver el mensaje "Hola, UART funcionando!" repitiéndose cada 1 segundo.
 
+![alt text](/IMAGENES/uart_funcionando.png)
+
 - Si no aparece nada:
 
-  - Revisa la conexión TX/RX
+  - Revisar la conexión TX/RX
 
   - Verificar que el COM sea el correcto
 
   - Asegúrarse de que PuTTY no esté abierto en otro programa
+
+
 
 ## Descripción del Código PARTE 2 
 
@@ -1384,6 +1388,24 @@ Resultado: Se ejecuta update() cada segundo, leyendo nuevos datos del puerto ser
 | [ADC.h](/CODIGOS_PARTE_2/ADC.h)   | Archico encabezado    | h     |
 | [serial_pic.py](/CODIGOS_PARTE_2/serial_pic.py)   |   Interpretar valores de UART     | py   |
 
+### Resultado 
+
+Como resultado al copilar el codigo de Python deberia verse la siguiente ventana 
+
+![alt text](/IMAGENES/ADC_UART.png)
+
+En la gráfica se observa cómo varía el voltaje leído a través de la comunicación UART en función del tiempo. A medida que se incrementa la resistencia del potenciómetro y se aproxima a su valor máximo, el voltaje también aumenta hasta alcanzar un valor cercano a 5 voltios, lo cual se refleja en el eje vertical (Y). Posteriormente, al disminuir la resistencia del potenciómetro, el voltaje decrece progresivamente hasta aproximarse a 0 voltios. El eje horizontal (X) representa el tiempo transcurrido en segundos, lo que permite visualizar claramente la evolución del voltaje en función del ajuste del potenciómetro. Esta gráfica ilustra de manera efectiva la relación entre el control resistivo del potenciómetro y la señal analógica convertida y transmitida por UART.
+
 # DIAGRAMAS 
 
+### CONEXIÓN DE PINES
+
+![alt text](/IMAGENES/CONEXIONES_UART.jpg)
+
 # IMPLEMENTACIÓN
+
+[VIDEO DE IMPLEMENTACIÓN](https://youtu.be/MxzA_0oDXVE)
+
+# REFERENCIAS
+
+(S/f). *Microchip.com*. Recuperado el 12 de abril de 2025, de [https://ww1.microchip.com/downloads/en/DeviceDoc/40001412G.pdf](https://ww1.microchip.com/downloads/en/DeviceDoc/40001412G.pdf) 
