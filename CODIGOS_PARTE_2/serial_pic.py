@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 import re
 from collections import deque
 
-SERIAL_PORT = '/dev/ttyUSB0'     
+SERIAL_PORT = 'COM5'     
 BAUDRATE = 9600
 
 MAX_POINTS = 100
