@@ -1396,6 +1396,95 @@ Como resultado al copilar el codigo de Python deberia verse la siguiente ventana
 
 En la gráfica se observa cómo varía el voltaje leído a través de la comunicación UART en función del tiempo. A medida que se incrementa la resistencia del potenciómetro y se aproxima a su valor máximo, el voltaje también aumenta hasta alcanzar un valor cercano a 5 voltios, lo cual se refleja en el eje vertical (Y). Posteriormente, al disminuir la resistencia del potenciómetro, el voltaje decrece progresivamente hasta aproximarse a 0 voltios. El eje horizontal (X) representa el tiempo transcurrido en segundos, lo que permite visualizar claramente la evolución del voltaje en función del ajuste del potenciómetro. Esta gráfica ilustra de manera efectiva la relación entre el control resistivo del potenciómetro y la señal analógica convertida y transmitida por UART.
 
+### **Diagrama   PIC18F45K22**
+
+![DIAGRAMA](/IMAGENES/DIAGRAMA.png)
+
+
+## Internal Oscillator Block
+
+## 1. Oscilador Interno 
+```c 
+#pragma config FOSC = INTIO67  
+OSCCON = 0b01110000;  
+
+
+```
+- Ubicación en el diagrama:
+
+- Parte inferior izquierda: Internal Oscillator Block
+
+Función:Configura el sistema de reloj interno del microcontrolador a 16 MHz utilizando el oscilador interno. Esto determina la velocidad de ejecución del programa y periféricos como UART y ADC.
+
+
+## 2. ADC en RA0 (entrada analógica)
+```c 
+TRISA |= 0b00000001;   // RA0 como entrada
+ANSELA |= 0b00000001;  // Habilita analógico en RA0
+
+ADCON0 = 0b00000001;   // Selecciona canal AN0, ADC ON
+ADCON1 = 0b00000000;   // Vref+ = VDD, Vref- = VSS
+ADCON2 = 0b10111110;   // Justificado a la derecha, Tacq, Fosc/64
+
+
+```
+## Ubicación en el diagrama:
+- Parte inferior derecha: ADC 10-bit
+
+- Asociado a PORTA (RA0)
+
+Función: Configura el pin RA0 como entrada analógica y activa el ADC para leer sensores analógicos.
+
+## 3 Lectura del ADC y conversión a voltaje
+```c 
+adc = readADC();  
+voltaje = adc * 5.0 / 1023.0;
+
+
+``` 
+## Ubicación en el diagrama:
+- Parte inferior derecha: ADC 10-bit
+
+Función:Lee el valor convertido del ADC (10 bits) y lo transforma en un voltaje en voltios.
+## 4. Comunicación Serial UART
+```c 
+UART_Init();  
+UART_WriteString(buffer);  
+
+```
+## Ubicación en el diagrama:
+- Parte inferior: EUSART1
+
+- Asociado a PORTC (RC6 = TX, RC7 = RX)
+
+- Asociado con PORTC (RC1, RC2)
+
+Función:Inicializa el módulo UART y envía el voltaje convertido a través del puerto serial (por ejemplo, hacia un monitor serial en PC).
+
+
+## 5. Configuración de Pines UART
+```c 
+TRISC6 = 0; // TX como salida  
+TRISC7 = 1; // RX como entrada  
+
+```
+## Ubicación en el diagrama:
+- Parte derecha: PORTC (RC6 y RC7)
+
+Función:Configura los pines TX y RX para la comunicación serial UART.
+## 6. Lógica principal del programa
+```c 
+// Uso de while(1), condiciones, funciones, etc.
+
+```
+## Ubicación en el diagrama:
+- Ubicación en el diagrama:
+
+- Parte central: bloques Instruction Decode and Control, ALU, Program Counter, etc.
+
+Función: Se utilizan los bloques centrales del CPU para ejecución de instrucciones, operaciones lógicas, comparación y llamadas a funciones.
+
+
 # DIAGRAMAS 
 
 ### CONEXIÓN DE PINES
